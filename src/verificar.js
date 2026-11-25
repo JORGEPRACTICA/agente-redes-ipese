@@ -76,7 +76,9 @@ export async function verificarTodo({ config, meta, modelo, fetchFn = globalThis
   const faltan = variablesFaltantes(config, env);
 
   // 1. Variables (solo los NOMBRES)
-  const obligatorias = [...faltan.instagram, ...faltan.panel, ...faltan.direccion];
+  // Plantilla de IPESE: Instagram es opcional si la Página de Facebook está configurada (el agente trabaja con una sola red).
+  const soloFacebook = !config.ig.configurado && config.fb.configurado;
+  const obligatorias = [...(soloFacebook ? [] : faltan.instagram), ...faltan.panel, ...faltan.direccion];
   if (obligatorias.length) {
     agregar(mal('variables', 'Variables en Railway', `Faltan estas variables (solo los nombres): ${obligatorias.join(', ')}.`, pasoRailway(obligatorias)));
   } else {
@@ -110,7 +112,9 @@ export async function verificarTodo({ config, meta, modelo, fetchFn = globalThis
 
   // 4. Token de Meta y a qué cuenta pertenece
   let cuenta = null;
-  if (!config.ig.configurado) {
+  if (!config.ig.configurado && soloFacebook) {
+    agregar(aviso('meta_token', 'Cuenta de Instagram', 'Instagram no está configurado: el agente trabaja solo con tu Página de Facebook.', `Si también quieres Instagram: ${pasoRailway(faltan.instagram.length ? faltan.instagram : ['IG_TOKEN', 'IG_USER_ID'])}`));
+  } else if (!config.ig.configurado) {
     agregar(mal('meta_token', 'Token de Meta y cuenta de Instagram', 'No puedo revisar el token porque faltan IG_TOKEN o IG_USER_ID.', pasoRailway(faltan.instagram.length ? faltan.instagram : ['IG_TOKEN', 'IG_USER_ID'])));
   } else {
     const r = await meta.ig.cuenta();

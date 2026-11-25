@@ -107,7 +107,7 @@ export function leerConfig(env = process.env, { raiz: raizPorOmision = RAIZ } = 
     comentarios: {
       activo: esAfirmativo(env.COMENTARIOS_ACTIVO),
       modo: modoComentarios === 'automatico' || modoComentarios === 'automático' ? 'automatico' : 'borradores',
-      cadaMin: enteroEntre(env.COMENTARIOS_CADA_MIN, 10, 2, 240),
+      cadaMin: enteroEntre(env.COMENTARIOS_CADA_MIN, 2, 2, 240),   // plantilla: cada 2 min (el mínimo seguro para Meta)
       publicaciones: enteroEntre(env.COMENTARIOS_PUBLICACIONES, 10, 1, 25),
       desdeHoras: enteroEntre(env.COMENTARIOS_DESDE_HORAS, 72, 1, 720),
       maxPorCiclo: enteroEntre(env.COMENTARIOS_MAX_POR_CICLO, 10, 1, 50),

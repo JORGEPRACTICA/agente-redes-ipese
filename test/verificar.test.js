@@ -155,8 +155,10 @@ test('llave de Anthropic: inválida, ausente (con y sin comentarios) y modelo in
 });
 
 test('faltan variables: lista solo los NOMBRES', async (t) => {
-  const c = await entornoConServidor(t, { env: { IG_TOKEN: undefined, IG_USER_ID: undefined, PANEL_CLAVE: undefined } });
-  const inf = await verificar(t, c, { resto: { env: { ...c.e.env, IG_TOKEN: undefined, IG_USER_ID: undefined, PANEL_CLAVE: undefined } } });
+  // Sin ninguna red configurada (en la plantilla, Instagram solo es opcional si la Página de Facebook sí está)
+  const sinRedes = { IG_TOKEN: undefined, IG_USER_ID: undefined, FB_PAGE_TOKEN: undefined, FB_PAGE_ID: undefined, PANEL_CLAVE: undefined };
+  const c = await entornoConServidor(t, { env: sinRedes });
+  const inf = await verificar(t, c, { resto: { env: { ...c.e.env, ...sinRedes } } });
   const v = por(inf, 'variables');
   assert.equal(v.estado, 'mal');
   assert.match(v.detalle, /IG_TOKEN, IG_USER_ID, PANEL_CLAVE/);
@@ -195,4 +197,12 @@ test('el texto del informe trae «Siguiente paso» en cada ❌', async (t) => {
   const lineas = texto.split('\n');
   lineas.forEach((l, i) => { if (l.startsWith('❌ ') && !l.startsWith('❌ TODAVÍA')) assert.match(lineas[i + 1], /Siguiente paso/); });
   assert.match(texto, /TODAVÍA NO ESTÁ LISTO/);
+});
+
+test('plantilla: con SOLO la Página de Facebook, Instagram sale como aviso (no ❌) y las variables están completas', async (t) => {
+  const c = await entornoConServidor(t, { env: { IG_TOKEN: undefined, IG_USER_ID: undefined } });
+  const inf = await verificar(t, c);
+  assert.notEqual(por(inf, 'variables').estado, 'mal', JSON.stringify(por(inf, 'variables')));
+  assert.equal(por(inf, 'meta_token').estado, 'aviso');
+  assert.match(por(inf, 'meta_token').detalle, /solo con tu Página de Facebook/);
 });
