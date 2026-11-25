@@ -1,7 +1,7 @@
 {
   "$schema": "https://railway.com/railway.schema.json",
   "deploy": {
-    "startCommand": "npm start",
+    "startCommand": "node src/index.js",
     "healthcheckPath": "/salud",
     "healthcheckTimeout": 120,
     "restartPolicyType": "ON_FAILURE",

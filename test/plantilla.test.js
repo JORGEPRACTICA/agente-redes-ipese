@@ -140,5 +140,7 @@ test('renovación: sin internet no truena y lo intenta después', async () => {
 test('railway.json existe, es válido y revisa /salud', () => {
   const r = JSON.parse(fs.readFileSync(path.join(RAIZ, 'railway.json'), 'utf8'));
   assert.equal(r.deploy.healthcheckPath, '/salud');
-  assert.equal(r.deploy.startCommand, 'npm start');
+  // Directo con node (no con npm): así la señal de apagado de Railway llega al servicio, se apaga limpio
+  // y el despliegue anterior no aparece como «Crashed» en cada redespliegue.
+  assert.equal(r.deploy.startCommand, 'node src/index.js');
 });
