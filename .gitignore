@@ -1,0 +1,24 @@
+# Llaves y secretos: NUNCA se suben a GitHub.
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Datos que genera el Publicador mientras trabaja (estado y borradores).
+datos/
+
+# Hojas de apoyo que se quedan en tu computadora (la de textos para pegar menciona a propósito
+# cómo empiezan las llaves, para que Claude Code las busque antes de subir nada).
+TEXTOS-PARA-PEGAR.md
+TEXTOS-PARA-PEGAR.html
+AVANCE.md
+
+# Dependencias y archivos de tu computadora.
+node_modules/
+.claude/settings.local.json
+.DS_Store
+Thumbs.db
+*.log

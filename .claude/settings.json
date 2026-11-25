@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "deny": [
+      "Read(.env)",
+      "Read(.env.*)",
+      "Read(!.env.example)",
+      "Read(*.pem)",
+      "Read(*.key)",
+      "Bash(printenv *)",
+      "Bash(env *)",
+      "Bash(gh auth token *)",
+      "Bash(gh auth status --show-token *)",
+      "Bash(gh auth status -t *)",
+      "Bash(railway up *)",
+      "Bash(railway variables *)",
+      "Bash(railway variable *)",
+      "Bash(gh repo create * --public)",
+      "Bash(gh repo create * --public *)",
+      "Bash(gh repo edit * --visibility public*)"
+    ]
+  }
+}

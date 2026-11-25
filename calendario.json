@@ -1,0 +1,43 @@
+{
+  "ayuda": [
+    "Cada publicación lleva: fecha (hora de tu zona horaria), texto, imagen (el nombre de un archivo JPEG de la carpeta imagenes) y redes (instagram, facebook o las dos).",
+    "estado: activa (se publica), pausada (no se publica) o ejemplo (solo se ensaya en modo prueba y nunca se publica de verdad).",
+    "No tienes que editar este archivo a mano: pídele a Claude Code «agrega una publicación para el viernes a las 10:00 con esta foto y este texto».",
+    "Estas tres publicaciones son EJEMPLOS: Claude Code las reemplaza por las tuyas."
+  ],
+  "publicaciones": [
+    {
+      "id": "ejemplo-1",
+      "fecha": "2026-12-01 10:00",
+      "redes": [
+        "instagram",
+        "facebook"
+      ],
+      "imagen": "ejemplo-1.jpg",
+      "texto": "¡Buenos días! ☀️ Hoy abrimos con muchas ganas de atenderte.\n\nPasa por tu pieza favorita de la semana y cuéntanos cómo te fue con la anterior.\n\n#negocio #ejemplo #buenosdias",
+      "estado": "ejemplo"
+    },
+    {
+      "id": "ejemplo-2",
+      "fecha": "2026-12-03 18:30",
+      "redes": [
+        "instagram",
+        "facebook"
+      ],
+      "imagen": "ejemplo-2.jpg",
+      "texto": "Detrás de cámaras 🎬\n\nAsí preparamos cada pedido antes de enviarlo: revisamos, empacamos con cariño y escribimos una nota a mano.\n\n¿Te gustaría ver más de cómo trabajamos? Cuéntanos en los comentarios.\n\n#detrasdecamaras #hechoamano #negocio",
+      "estado": "ejemplo"
+    },
+    {
+      "id": "ejemplo-3",
+      "fecha": "2026-12-05 09:00",
+      "redes": [
+        "instagram",
+        "facebook"
+      ],
+      "imagen": "ejemplo-3.jpg",
+      "texto": "¡Esta semana te cuento cómo preparamos todo para ti! 🌟\n\n📌 Primera idea\nCada día revisamos las piezas con calma, una por una, para que lleguen a tus manos como te las prometimos. Nos tomamos el tiempo que haga falta porque lo importante es que te encante. Si algo no te convence, nos lo dices y lo resolvemos juntos, sin prisas y sin letra chica.\n\n📌 Segunda idea\nTrabajamos con proveedores que conocemos personalmente. Sabemos de dónde viene cada material y quién lo hizo, y eso se nota en el resultado final. Preferimos hacer menos cosas, pero hacerlas bien, y acompañarte desde que eliges hasta que lo recibes. Cuidamos cada detalle del empaque, de la nota que va dentro y del trato que recibes cuando nos escribes.\n\n📌 Tercera idea\nNos encanta que nos cuentes para qué lo quieres. Un regalo, una celebración, un gusto propio: cada historia cambia lo que te recomendamos. Por eso, antes de sugerirte algo, preguntamos y escuchamos. A veces la mejor opción no es la más llamativa, sino la que va contigo, con tu espacio y con la persona que lo va a disfrutar.\n\n📌 Cuarta idea\nTambién compartimos consejos de cuidado para que tus piezas duren mucho tiempo: cómo guardarlas, cómo limpiarlas y cuándo conviene revisarlas. Es parte de nuestro trabajo y no tiene ningún costo preguntar. Si tienes dudas después de tu compra, aquí estamos; para nosotros la atención no termina cuando pagas, empieza cuando recibes.\n\n📌 Quinta idea\nCada mes escogemos una causa pequeña de nuestra comunidad y le dedicamos tiempo y recursos: una jornada de limpieza, un taller para vecinos, una colecta de útiles escolares. Nos gusta que lo bueno que hacemos se quede cerca de casa. Si quieres participar o proponer una causa, cuéntanos.\n\n📌 Sexta idea\nGracias a quienes nos acompañan desde el primer día y a quienes nos conocieron la semana pasada. Cada comentario, cada foto que nos etiquetan y cada recomendación boca a boca nos ayudan a seguir. Esta publicación es larga a propósito: así ves cómo el Publicador la acorta solo para Instagram y la deja completa en Facebook.\n\n📌 Séptima idea\nCuando algo sale distinto a lo que esperabas, preferimos que nos lo digas de frente. Una queja bien escuchada nos enseña más que cien elogios, y siempre buscamos la forma de corregir lo que haya pasado. Te respondemos con respeto, sin pretextos y con ganas de arreglarlo.\n\n📌 Octava idea\nSi nos escribes fuera de horario, no te preocupes: leemos todo al día siguiente y te contestamos con calma. Preferimos tardar un poco y darte una respuesta clara que contestar rápido y a medias. Tu tiempo y el nuestro valen lo mismo.\n\nEscríbenos por mensaje privado y con gusto te atendemos.\n\nEstamos en la calle Ejemplo 123, de lunes a sábado.\n\n#negocio #ejemplo #atencion #comunidad #hechoconcariño",
+      "estado": "ejemplo"
+    }
+  ]
+}

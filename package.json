@@ -1,0 +1,19 @@
+{
+  "name": "agente-redes-ipese",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Agente de IPESE que contesta comentarios de Instagram y Facebook con la voz de cada negocio (plantilla de Railway).",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "node --test",
+    "verificar": "node src/cli/verificar.js",
+    "validar": "node src/cli/validar.js",
+    "ensayo": "node src/cli/ensayo.js",
+    "comentarios:prueba": "node src/cli/comentarios-prueba.js",
+    "simular-cliente": "node herramientas/simular-cliente.mjs"
+  }
+}
